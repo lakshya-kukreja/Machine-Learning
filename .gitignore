@@ -1,0 +1,114 @@
+# ==============================================================================
+# Python & Bytecode
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================================================================
+# Virtual Environments & Package Managers
+# ==============================================================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# Jupyter Notebooks & Checkpoints
+# ==============================================================================
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+*/.ipynb_checkpoints/*
+
+# ==============================================================================
+# Machine Learning & Data Science Artifacts
+# ==============================================================================
+# Model checkpoints & serialized models (uncomment if storing locally)
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# ML tracking tools & run logs
+wandb/
+mlruns/
+lightning_logs/
+.neptune/
+
+# ==============================================================================
+# Datasets & Large Data Files
+# ==============================================================================
+# Note: Keep git repositories lightweight. Raw/large datasets should not be committed.
+# If you have small homework CSVs you want to track, you can commit them explicitly.
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+# Uncomment the line below if you prefer to exclude all dataset CSVs by default:
+# **/datasets/*.csv
+
+# ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# ==============================================================================
+# IDEs, Editors & OS Metadata
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# VS Code / Cursor / JetBrains
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+
+# ==============================================================================
+# Testing, Coverage & Caches
+# ==============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.cache/
