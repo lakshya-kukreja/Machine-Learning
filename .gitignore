@@ -68,8 +68,7 @@ lightning_logs/
 *.tar
 *.rar
 *.7z
-# Uncomment the line below if you prefer to exclude all dataset CSVs by default:
-# **/datasets/*.csv
+*.csv
 
 # ==============================================================================
 # Environment Variables & Secrets
