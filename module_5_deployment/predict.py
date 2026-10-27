@@ -12,7 +12,7 @@ customer = {
     "seniorcitizen": 0,
     "partner": "yes",
     "dependents": "no",
-    "tenure": 12,
+    "tenure": 15,
     "phoneservice": "yes",
     "multiplelines": "no",
     "internetservice": "fiber_optic",
