@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: /module_5_deployment
+        working-directory: module_5_deployment
 
     steps:
       - name: Checkout repository
