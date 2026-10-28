@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "lakshyakukreja7official@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.149.0",
     "jupyter>=1.1.1",
@@ -23,6 +23,11 @@ machine-learning = "machine_learning:main"
 
 [tool.uv]
 package = false
+
+[tool.uv.workspace]
+members = [
+    "homework",
+]
 
 [dependency-groups]
 dev = [
