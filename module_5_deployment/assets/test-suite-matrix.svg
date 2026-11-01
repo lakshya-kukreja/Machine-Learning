@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 430" width="100%" height="100%" style="background: #090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="card-drop3" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="525" y="34" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700">Automated Test Suite Quality Gates (test_app.py)</text>
+  <text x="525" y="56" text-anchor="middle" fill="#94a3b8" font-size="12.5">4 automated pytest assertions executed in CI before any deployment to Render</text>
+
+  <!-- 4 Cards Grid -->
+  <g transform="translate(25, 80)" filter="url(#card-drop3)">
+    
+    <!-- Test Card 1: Health -->
+    <g transform="translate(0, 0)">
+      <rect width="235" height="290" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+      <rect width="235" height="36" rx="10" fill="#064e3b"/>
+      <circle cx="16" cy="18" r="5" fill="#34d399"/>
+      <text x="28" y="22" fill="#a7f3d0" font-size="11" font-weight="700">test_health</text>
+      <text x="195" y="22" fill="#34d399" font-size="10" font-weight="700">PASS [25%]</text>
+
+      <text x="16" y="60" fill="#38bdf8" font-size="10" font-weight="700">TARGET ENDPOINT:</text>
+      <text x="16" y="78" fill="#f1f5f9" font-family="monospace" font-size="11">GET /health</text>
+
+      <line x1="16" y1="92" x2="219" y2="92" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="16" y="112" fill="#94a3b8" font-size="10" font-weight="600">EXPECTED STATUS:</text>
+      <text x="16" y="130" fill="#34d399" font-family="monospace" font-size="12" font-weight="700">200 OK</text>
+
+      <text x="16" y="156" fill="#94a3b8" font-size="10" font-weight="600">ASSERTION BODY:</text>
+      <text x="16" y="174" fill="#cbd5e1" font-family="monospace" font-size="10.5">{"status": "ok"}</text>
+
+      <rect x="12" y="200" width="211" height="75" rx="6" fill="#1e293b"/>
+      <text x="20" y="218" fill="#a7f3d0" font-size="9.5" font-weight="700">Protects Against:</text>
+      <text x="20" y="234" fill="#94a3b8" font-size="9">• Uvicorn worker boot crash</text>
+      <text x="20" y="248" fill="#94a3b8" font-size="9">• Corrupted FastAPI router</text>
+      <text x="20" y="262" fill="#94a3b8" font-size="9">• Broken container probe</text>
+    </g>
+
+    <!-- Test Card 2: Predict -->
+    <g transform="translate(255, 0)">
+      <rect width="235" height="290" rx="10" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5"/>
+      <rect width="235" height="36" rx="10" fill="#1e3a8a"/>
+      <circle cx="16" cy="18" r="5" fill="#60a5fa"/>
+      <text x="28" y="22" fill="#bfdbfe" font-size="11" font-weight="700">test_predict</text>
+      <text x="195" y="22" fill="#60a5fa" font-size="10" font-weight="700">PASS [50%]</text>
+
+      <text x="16" y="60" fill="#38bdf8" font-size="10" font-weight="700">TARGET ENDPOINT:</text>
+      <text x="16" y="78" fill="#f1f5f9" font-family="monospace" font-size="11">POST /predict</text>
+
+      <line x1="16" y1="92" x2="219" y2="92" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="16" y="112" fill="#94a3b8" font-size="10" font-weight="600">EXPECTED STATUS:</text>
+      <text x="16" y="130" fill="#60a5fa" font-family="monospace" font-size="12" font-weight="700">200 OK</text>
+
+      <text x="16" y="156" fill="#94a3b8" font-size="10" font-weight="600">ASSERTION BOUNDS:</text>
+      <text x="16" y="174" fill="#cbd5e1" font-family="monospace" font-size="10">0 &lt;= probability &lt;= 1</text>
+      <text x="16" y="188" fill="#cbd5e1" font-family="monospace" font-size="10">isinstance(churn, bool)</text>
+
+      <rect x="12" y="200" width="211" height="75" rx="6" fill="#1e293b"/>
+      <text x="20" y="218" fill="#bfdbfe" font-size="9.5" font-weight="700">Protects Against:</text>
+      <text x="20" y="234" fill="#94a3b8" font-size="9">• Broken unpickle of pipeline</text>
+      <text x="20" y="248" fill="#94a3b8" font-size="9">• Vectorizer feature drift</text>
+      <text x="20" y="262" fill="#94a3b8" font-size="9">• Non-float probability outputs</text>
+    </g>
+
+    <!-- Test Card 3: Invalid Tenure -->
+    <g transform="translate(510, 0)">
+      <rect width="235" height="290" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
+      <rect width="235" height="36" rx="10" fill="#78350f"/>
+      <circle cx="16" cy="18" r="5" fill="#fbbf24"/>
+      <text x="28" y="22" fill="#fde68a" font-size="11" font-weight="700">test_invalid_tenure</text>
+      <text x="195" y="22" fill="#fbbf24" font-size="10" font-weight="700">PASS [75%]</text>
+
+      <text x="16" y="60" fill="#38bdf8" font-size="10" font-weight="700">TARGET PAYLOAD:</text>
+      <text x="16" y="78" fill="#fca5a5" font-family="monospace" font-size="11">{"tenure": -1}</text>
+
+      <line x1="16" y1="92" x2="219" y2="92" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="16" y="112" fill="#94a3b8" font-size="10" font-weight="600">EXPECTED STATUS:</text>
+      <text x="16" y="130" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="700">422 Unprocessable</text>
+
+      <text x="16" y="156" fill="#94a3b8" font-size="10" font-weight="600">VALIDATOR GATE:</text>
+      <text x="16" y="174" fill="#cbd5e1" font-family="monospace" font-size="10">Pydantic Field(ge=0)</text>
+
+      <rect x="12" y="200" width="211" height="75" rx="6" fill="#1e293b"/>
+      <text x="20" y="218" fill="#fde68a" font-size="9.5" font-weight="700">Protects Against:</text>
+      <text x="20" y="234" fill="#94a3b8" font-size="9">• Negative numbers in model</text>
+      <text x="20" y="248" fill="#94a3b8" font-size="9">• Silent nonsensical predictions</text>
+      <text x="20" y="262" fill="#94a3b8" font-size="9">• Matrix multiplication errors</text>
+    </g>
+
+    <!-- Test Card 4: Method Not Allowed -->
+    <g transform="translate(765, 0)">
+      <rect width="235" height="290" rx="10" fill="#0f172a" stroke="#ec4899" stroke-width="1.5"/>
+      <rect width="235" height="36" rx="10" fill="#831843"/>
+      <circle cx="16" cy="18" r="5" fill="#f472b6"/>
+      <text x="28" y="22" fill="#fbcfe8" font-size="10.5" font-weight="700">test_method_safety</text>
+      <text x="190" y="22" fill="#f472b6" font-size="10" font-weight="700">PASS [100%]</text>
+
+      <text x="16" y="60" fill="#38bdf8" font-size="10" font-weight="700">TARGET VERB:</text>
+      <text x="16" y="78" fill="#fca5a5" font-family="monospace" font-size="11">GET /predict</text>
+
+      <line x1="16" y1="92" x2="219" y2="92" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="16" y="112" fill="#94a3b8" font-size="10" font-weight="600">EXPECTED STATUS:</text>
+      <text x="16" y="130" fill="#f472b6" font-family="monospace" font-size="12" font-weight="700">405 Not Allowed</text>
+
+      <text x="16" y="156" fill="#94a3b8" font-size="10" font-weight="600">ROUTE CONTRACT:</text>
+      <text x="16" y="174" fill="#cbd5e1" font-family="monospace" font-size="10">POST methods only</text>
+
+      <rect x="12" y="200" width="211" height="75" rx="6" fill="#1e293b"/>
+      <text x="20" y="218" fill="#fbcfe8" font-size="9.5" font-weight="700">Protects Against:</text>
+      <text x="20" y="234" fill="#94a3b8" font-size="9">• Accidental caching of calls</text>
+      <text x="20" y="248" fill="#94a3b8" font-size="9">• Query param feature leaks</text>
+      <text x="20" y="262" fill="#94a3b8" font-size="9">• HTTP verb mismatch bugs</text>
+    </g>
+  </g>
+
+  <!-- Summary Bottom Banner -->
+  <g transform="translate(25, 385)">
+    <rect width="1000" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="20" fill="#38bdf8" font-size="11" font-weight="700">TEST COMMAND:</text>
+    <text x="135" y="20" fill="#f1f5f9" font-family="monospace" font-size="11">uv run pytest -v test_app.py</text>
+    <text x="680" y="20" fill="#34d399" font-size="11" font-weight="700">RESULT: 4 passed in 0.42 seconds</text>
+  </g>
+</svg>

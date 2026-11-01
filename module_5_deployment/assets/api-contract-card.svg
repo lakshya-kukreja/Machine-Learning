@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 560" width="100%" height="100%" style="background: #090d16; font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;">
+  <defs>
+    <filter id="card-sh" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="525" y="32" text-anchor="middle" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700">FastAPI Prediction Service Contract (/predict)</text>
+  <text x="525" y="54" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5">Real Pydantic v2 Customer input schema validated against the trained scikit-learn pipeline</text>
+
+  <!-- Left Window: Request Payload -->
+  <g transform="translate(35, 75)" filter="url(#card-sh)">
+    <rect width="510" height="460" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <!-- Window Header -->
+    <rect width="510" height="34" rx="10" fill="#1e293b"/>
+    <circle cx="18" cy="17" r="5" fill="#ef4444"/>
+    <circle cx="34" cy="17" r="5" fill="#f59e0b"/>
+    <circle cx="50" cy="17" r="5" fill="#10b981"/>
+    <text x="75" y="22" fill="#38bdf8" font-size="11" font-weight="600">POST /predict — Content-Type: application/json</text>
+
+    <!-- JSON Request Body -->
+    <text x="20" y="60" fill="#94a3b8" font-size="11">{</text>
+    <text x="35" y="80" fill="#7dd3fc" font-size="11">"gender"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"female"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="98" fill="#7dd3fc" font-size="11">"seniorcitizen"<tspan fill="#94a3b8">: </tspan><tspan fill="#f472b6">0</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="116" fill="#7dd3fc" font-size="11">"partner"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"yes"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="134" fill="#7dd3fc" font-size="11">"dependents"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="152" fill="#7dd3fc" font-size="11">"tenure"<tspan fill="#94a3b8">: </tspan><tspan fill="#f472b6">5</tspan><tspan fill="#94a3b8">,</tspan> <tspan fill="#34d399" font-size="9.5">// Field(ge=0)</tspan></text>
+    <text x="35" y="170" fill="#7dd3fc" font-size="11">"phoneservice"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"yes"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="188" fill="#7dd3fc" font-size="11">"multiplelines"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="206" fill="#7dd3fc" font-size="11">"internetservice"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"fiber_optic"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="224" fill="#7dd3fc" font-size="11">"onlinesecurity"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="242" fill="#7dd3fc" font-size="11">"onlinebackup"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"yes"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="260" fill="#7dd3fc" font-size="11">"deviceprotection"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="278" fill="#7dd3fc" font-size="11">"techsupport"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="296" fill="#7dd3fc" font-size="11">"streamingtv"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"yes"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="314" fill="#7dd3fc" font-size="11">"streamingmovies"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"no"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="332" fill="#7dd3fc" font-size="11">"contract"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"month-to-month"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="350" fill="#7dd3fc" font-size="11">"paperlessbilling"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"yes"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="368" fill="#7dd3fc" font-size="11">"paymentmethod"<tspan fill="#94a3b8">: </tspan><tspan fill="#fde68a">"electronic_check"</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="35" y="386" fill="#7dd3fc" font-size="11">"monthlycharges"<tspan fill="#94a3b8">: </tspan><tspan fill="#f472b6">79.85</tspan><tspan fill="#94a3b8">,</tspan> <tspan fill="#34d399" font-size="9.5">// Field(ge=0)</tspan></text>
+    <text x="35" y="404" fill="#7dd3fc" font-size="11">"totalcharges"<tspan fill="#94a3b8">: </tspan><tspan fill="#f472b6">950.20</tspan> <tspan fill="#34d399" font-size="9.5">// Field(ge=0)</tspan></text>
+    <text x="20" y="426" fill="#94a3b8" font-size="11">}</text>
+
+    <!-- Schema footnote -->
+    <rect x="15" y="432" width="480" height="20" rx="4" fill="#1e293b"/>
+    <text x="25" y="446" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="9.5">19 features total • Normalized lowercase strings • Non-negative numeric bounds</text>
+  </g>
+
+  <!-- Right Window: Response Payload -->
+  <g transform="translate(575, 75)" filter="url(#card-sh)">
+    <!-- Success Box -->
+    <rect width="440" height="215" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="440" height="34" rx="10" fill="#064e3b"/>
+    <circle cx="18" cy="17" r="5" fill="#ef4444"/>
+    <circle cx="34" cy="17" r="5" fill="#f59e0b"/>
+    <circle cx="50" cy="17" r="5" fill="#10b981"/>
+    <text x="75" y="22" fill="#a7f3d0" font-size="11" font-weight="700">HTTP 200 OK — PredictionResponse</text>
+
+    <text x="25" y="65" fill="#94a3b8" font-size="11">{</text>
+    <text x="45" y="90" fill="#7dd3fc" font-size="12">"churn_probability"<tspan fill="#94a3b8">: </tspan><tspan fill="#34d399" font-weight="700">0.7142895464232515</tspan><tspan fill="#94a3b8">,</tspan></text>
+    <text x="45" y="115" fill="#7dd3fc" font-size="12">"churn"<tspan fill="#94a3b8">: </tspan><tspan fill="#f87171" font-weight="700">true</tspan></text>
+    <text x="25" y="140" fill="#94a3b8" font-size="11">}</text>
+
+    <rect x="25" y="155" width="390" height="44" rx="6" fill="#1e293b"/>
+    <text x="35" y="172" fill="#a5f3fc" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Decision Rule: churn = churn_probability &gt;= 0.5</text>
+    <text x="35" y="188" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="9.5">Elapsed Latency: ~3.4 ms • Monitored via time.perf_counter()</text>
+
+    <!-- Error Responses Box -->
+    <g transform="translate(0, 230)">
+      <rect width="440" height="230" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="1.2"/>
+      <rect width="440" height="34" rx="10" fill="#450a0a"/>
+      <text x="20" y="22" fill="#fca5a5" font-size="11" font-weight="700">Standard HTTP Error Contracts</text>
+
+      <text x="20" y="58" fill="#fca5a5" font-size="10" font-weight="700">1. HTTP 422 Unprocessable Entity (Schema/Bound Violation):</text>
+      <text x="20" y="75" fill="#cbd5e1" font-size="9.5">{"detail": [{"loc": ["body", "tenure"], "msg": "Input should be &gt;= 0"}]}</text>
+
+      <line x1="20" y1="95" x2="420" y2="95" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="20" y="118" fill="#fca5a5" font-size="10" font-weight="700">2. HTTP 405 Method Not Allowed (Verb Mismatch):</text>
+      <text x="20" y="135" fill="#cbd5e1" font-size="9.5">{"detail": "Method Not Allowed"}  <tspan fill="#94a3b8">(e.g. GET /predict)</tspan></text>
+
+      <line x1="20" y1="155" x2="420" y2="155" stroke="#1e293b" stroke-width="1"/>
+
+      <text x="20" y="178" fill="#fca5a5" font-size="10" font-weight="700">3. HTTP 500 Internal Server Error (Sanitized Exception):</text>
+      <text x="20" y="195" fill="#cbd5e1" font-size="9.5">{"detail": "Prediction failed due to an internal error"}</text>
+      <text x="20" y="212" fill="#64748b" font-size="9">* Full traceback recorded internally via logger.exception()</text>
+    </g>
+  </g>
+</svg>

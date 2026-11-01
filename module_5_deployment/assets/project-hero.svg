@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 280" width="100%" height="100%" style="background: #090d16; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="node-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1100" height="280" rx="14" fill="url(#bg-grad)"/>
+  <rect width="1098" height="278" x="1" y="1" rx="13" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Decorative Grid Overlay -->
+  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="280"/>
+    <line x1="200" y1="0" x2="200" y2="280"/>
+    <line x1="350" y1="0" x2="350" y2="280"/>
+    <line x1="500" y1="0" x2="500" y2="280"/>
+    <line x1="650" y1="0" x2="650" y2="280"/>
+    <line x1="800" y1="0" x2="800" y2="280"/>
+    <line x1="950" y1="0" x2="950" y2="280"/>
+    <line x1="0" y1="70" x2="1100" y2="70"/>
+    <line x1="0" y1="140" x2="1100" y2="140"/>
+    <line x1="0" y1="210" x2="1100" y2="210"/>
+  </g>
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(50, 42)">
+    <rect x="0" y="-2" width="145" height="22" rx="11" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <circle cx="10" cy="9" r="4" fill="#10b981"/>
+    <text x="22" y="13" fill="#38bdf8" font-size="11" font-weight="700" letter-spacing="0.5">ML ZOOMCAMP 2026</text>
+
+    <text x="0" y="46" fill="url(#text-grad)" font-size="26" font-weight="800" letter-spacing="0.3">CUSTOMER CHURN PREDICTION SERVICE</text>
+    <text x="0" y="68" fill="#94a3b8" font-size="13.5" font-weight="400">A complete engineering showcase: offline pipeline serialization to a containerized, CI-gated FastAPI service</text>
+  </g>
+
+  <!-- Connecting Pipeline Bus -->
+  <path d="M 100 190 L 1000 190" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 100 190 L 1000 190" stroke="#38bdf8" stroke-width="2" stroke-dasharray="12,8" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Stage 1: Model Pipeline -->
+  <g transform="translate(50, 145)" filter="url(#shadow)">
+    <rect width="170" height="90" rx="10" fill="url(#node-grad)" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="10" y="10" width="28" height="28" rx="6" fill="#78350f"/>
+    <text x="24" y="28" text-anchor="middle" fill="#fbbf24" font-size="14">⚙️</text>
+    <text x="48" y="22" fill="#f8fafc" font-size="12" font-weight="700">Trained Pipeline</text>
+    <text x="48" y="35" fill="#f59e0b" font-size="10" font-weight="600">pipeline.bin</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">• DictVectorizer</text>
+    <text x="12" y="73" fill="#94a3b8" font-size="10">• LogisticRegression (0.857 AUC)</text>
+  </g>
+
+  <!-- Stage 2: FastAPI Service -->
+  <g transform="translate(260, 145)" filter="url(#shadow)">
+    <rect width="170" height="90" rx="10" fill="url(#node-grad)" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect x="10" y="10" width="28" height="28" rx="6" fill="#164e63"/>
+    <text x="24" y="28" text-anchor="middle" fill="#22d3ee" font-size="14">⚡</text>
+    <text x="48" y="22" fill="#f8fafc" font-size="12" font-weight="700">FastAPI &amp; ASGI</text>
+    <text x="48" y="35" fill="#22d3ee" font-size="10" font-weight="600">Uvicorn (Port 8000)</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">• Lifespan In-Memory Load</text>
+    <text x="12" y="73" fill="#94a3b8" font-size="10">• Pydantic v2 Validation (ge=0)</text>
+  </g>
+
+  <!-- Stage 3: Docker Container -->
+  <g transform="translate(470, 145)" filter="url(#shadow)">
+    <rect width="170" height="90" rx="10" fill="url(#node-grad)" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="10" y="10" width="28" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="24" y="28" text-anchor="middle" fill="#60a5fa" font-size="14">🐳</text>
+    <text x="48" y="22" fill="#f8fafc" font-size="12" font-weight="700">Docker Packaging</text>
+    <text x="48" y="35" fill="#60a5fa" font-size="10" font-weight="600">python:3.13-slim</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">• Multi-Stage uv Binary Copy</text>
+    <text x="12" y="73" fill="#94a3b8" font-size="10">• Cached Dependency Layers</text>
+  </g>
+
+  <!-- Stage 4: GitHub Actions CI -->
+  <g transform="translate(680, 145)" filter="url(#shadow)">
+    <rect width="170" height="90" rx="10" fill="url(#node-grad)" stroke="#8b5cf6" stroke-width="1.5"/>
+    <rect x="10" y="10" width="28" height="28" rx="6" fill="#4c1d95"/>
+    <text x="24" y="28" text-anchor="middle" fill="#a78bfa" font-size="14">✓</text>
+    <text x="48" y="22" fill="#f8fafc" font-size="12" font-weight="700">GitHub Actions CI</text>
+    <text x="48" y="35" fill="#a78bfa" font-size="10" font-weight="600">ml-tests.yml</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">• uv sync --locked</text>
+    <text x="12" y="73" fill="#94a3b8" font-size="10">• pytest -v test_app.py (Gate)</text>
+  </g>
+
+  <!-- Stage 5: Render Cloud Hosting -->
+  <g transform="translate(890, 145)" filter="url(#shadow)">
+    <rect width="160" height="90" rx="10" fill="url(#node-grad)" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="10" y="10" width="28" height="28" rx="6" fill="#064e3b"/>
+    <text x="24" y="28" text-anchor="middle" fill="#34d399" font-size="14">🚀</text>
+    <text x="48" y="22" fill="#f8fafc" font-size="12" font-weight="700">Render Cloud</text>
+    <text x="48" y="35" fill="#34d399" font-size="10" font-weight="600">Live Production</text>
+    <text x="12" y="58" fill="#94a3b8" font-size="10">• Gated Auto-Deploy</text>
+    <text x="12" y="73" fill="#94a3b8" font-size="10">• Live HTTPS /health &amp; /docs</text>
+  </g>
+</svg>

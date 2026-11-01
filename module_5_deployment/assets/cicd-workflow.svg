@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="100%" height="100%" style="background: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="grad-git" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c2410c" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-ci" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="grad-cd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="drop-shadow-ci" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#fb923c" />
+    </marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#60a5fa" />
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171" />
+    </marker>
+  </defs>
+
+  <!-- Title Block -->
+  <text x="550" y="40" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="700" letter-spacing="0.5">Automated CI/CD &amp; Gated Deployment Pipeline</text>
+  <text x="550" y="65" text-anchor="middle" fill="#94a3b8" font-size="13">GitHub Actions continuous testing gating Render container auto-deployment</text>
+
+  <!-- Phase 1: Source Control -->
+  <g transform="translate(40, 95)">
+    <rect width="200" height="390" rx="10" fill="url(#grad-git)" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,4" filter="url(#drop-shadow-ci)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#fb923c" font-size="13" font-weight="700" letter-spacing="0.5">1. SOURCE TRIGGER</text>
+
+    <g transform="translate(15, 55)">
+      <rect width="170" height="80" rx="8" fill="#1e293b" stroke="#f97316" stroke-width="1.5"/>
+      <text x="85" y="28" text-anchor="middle" fill="#f1f5f9" font-size="13" font-weight="600">Developer Push</text>
+      <text x="85" y="48" text-anchor="middle" fill="#fed7aa" font-size="11">git commit &amp; push</text>
+      <text x="85" y="66" text-anchor="middle" fill="#94a3b8" font-size="10">Branch: main</text>
+    </g>
+
+    <g transform="translate(15, 160)">
+      <rect width="170" height="85" rx="8" fill="#1e293b" stroke="#ea580c" stroke-width="1.5"/>
+      <text x="85" y="28" text-anchor="middle" fill="#f1f5f9" font-size="13" font-weight="600">GitHub Repository</text>
+      <text x="85" y="48" text-anchor="middle" fill="#fed7aa" font-size="10">lakshya-kukreja/</text>
+      <text x="85" y="62" text-anchor="middle" fill="#fed7aa" font-size="10">Machine-Learning</text>
+      <text x="85" y="78" text-anchor="middle" fill="#94a3b8" font-size="9">Commit: af582b7</text>
+    </g>
+
+    <g transform="translate(15, 270)">
+      <rect width="170" height="95" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="85" y="24" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="600">Event Triggers</text>
+      <text x="85" y="45" text-anchor="middle" fill="#cbd5e1" font-size="10">• push: [main]</text>
+      <text x="85" y="63" text-anchor="middle" fill="#cbd5e1" font-size="10">• pull_request: [main]</text>
+      <text x="85" y="82" text-anchor="middle" fill="#38bdf8" font-size="10">ml-tests.yml</text>
+    </g>
+  </g>
+
+  <!-- Phase 2: GitHub Actions CI -->
+  <g transform="translate(280, 95)">
+    <rect width="420" height="390" rx="10" fill="url(#grad-ci)" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,4" filter="url(#drop-shadow-ci)"/>
+    <text x="210" y="30" text-anchor="middle" fill="#60a5fa" font-size="13" font-weight="700" letter-spacing="0.5">2. GITHUB ACTIONS RUNNER (ubuntu-latest)</text>
+
+    <!-- Sub-steps in CI -->
+    <g transform="translate(20, 50)">
+      <!-- Step 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="180" height="55" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="15" y="22" fill="#93c5fd" font-size="10" font-weight="700">STEP 1</text>
+        <text x="15" y="40" fill="#f1f5f9" font-size="11" font-weight="600">actions/checkout@v7</text>
+      </g>
+
+      <!-- Step 2 -->
+      <g transform="translate(200, 0)">
+        <rect width="180" height="55" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="15" y="22" fill="#93c5fd" font-size="10" font-weight="700">STEP 2</text>
+        <text x="15" y="40" fill="#f1f5f9" font-size="11" font-weight="600">astral-sh/setup-uv@v6</text>
+        <text x="15" y="50" fill="#94a3b8" font-size="9">Python 3.13</text>
+      </g>
+
+      <!-- Step 3 -->
+      <g transform="translate(0, 75)">
+        <rect width="180" height="55" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="15" y="22" fill="#93c5fd" font-size="10" font-weight="700">STEP 3</text>
+        <text x="15" y="40" fill="#f1f5f9" font-size="11" font-weight="600">uv sync --locked</text>
+        <text x="15" y="50" fill="#94a3b8" font-size="9">Deterministic install</text>
+      </g>
+
+      <!-- Step 4 -->
+      <g transform="translate(200, 75)">
+        <rect width="180" height="55" rx="6" fill="#1e293b" stroke="#2563eb" stroke-width="1.2"/>
+        <text x="15" y="22" fill="#93c5fd" font-size="10" font-weight="700">STEP 4: EXECUTE SUITE</text>
+        <text x="15" y="40" fill="#f1f5f9" font-size="11" font-weight="600">pytest -v test_app.py</text>
+        <text x="15" y="50" fill="#38bdf8" font-size="9">4 automated assertions</text>
+      </g>
+    </g>
+
+    <!-- Test Assertions Detail Box -->
+    <g transform="translate(20, 195)">
+      <rect width="380" height="80" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+      <text x="15" y="20" fill="#38bdf8" font-size="10" font-weight="700">Automated Test Quality Gates:</text>
+      <text x="15" y="37" fill="#cbd5e1" font-size="9.5">✓ test_health: GET /health returns 200 OK</text>
+      <text x="15" y="52" fill="#cbd5e1" font-size="9.5">✓ test_predict: Valid JSON returns p ∈ [0, 1] &amp; bool</text>
+      <text x="15" y="67" fill="#cbd5e1" font-size="9.5">✓ test_invalid_tenure: Negative tenure rejects with 422</text>
+      <text x="210" y="67" fill="#cbd5e1" font-size="9.5">✓ test_method: GET /predict → 405</text>
+    </g>
+
+    <!-- Decision Diamond / Gate -->
+    <g transform="translate(130, 290)">
+      <polygon points="80,0 160,35 80,70 0,35" fill="#1e293b" stroke="#60a5fa" stroke-width="1.5"/>
+      <text x="80" y="32" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700">All Tests</text>
+      <text x="80" y="46" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="700">Pass?</text>
+    </g>
+
+    <!-- Failure branch -->
+    <path d="M 130 325 L 30 325 L 30 365" fill="none" stroke="#f87171" stroke-width="1.5" marker-end="url(#arr-red)"/>
+    <rect x="5" y="365" width="120" height="20" rx="4" fill="#450a0a"/>
+    <text x="65" y="379" text-anchor="middle" fill="#fca5a5" font-size="9" font-weight="700">FAIL: Block &amp; Notify</text>
+  </g>
+
+  <!-- Phase 3: Continuous Deployment (Render) -->
+  <g transform="translate(740, 95)">
+    <rect width="320" height="390" rx="10" fill="url(#grad-cd)" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,4" filter="url(#drop-shadow-ci)"/>
+    <text x="160" y="30" text-anchor="middle" fill="#34d399" font-size="13" font-weight="700" letter-spacing="0.5">3. CONTINUOUS DEPLOYMENT (RENDER)</text>
+
+    <!-- CD Steps -->
+    <g transform="translate(20, 50)">
+      <rect width="280" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+      <text x="140" y="25" text-anchor="middle" fill="#f1f5f9" font-size="12" font-weight="600">Auto-Deploy Triggered</text>
+      <text x="140" y="43" text-anchor="middle" fill="#a7f3d0" font-size="10">Render pulls verified commit</text>
+    </g>
+
+    <g transform="translate(20, 125)">
+      <rect width="280" height="65" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1.2"/>
+      <text x="140" y="25" text-anchor="middle" fill="#f1f5f9" font-size="12" font-weight="600">Docker Build Container</text>
+      <text x="140" y="43" text-anchor="middle" fill="#a7f3d0" font-size="10">python:3.13.11-slim + uv layer caching</text>
+      <text x="140" y="57" text-anchor="middle" fill="#94a3b8" font-size="9">CMD: uvicorn app:app --port 8000</text>
+    </g>
+
+    <g transform="translate(20, 205)">
+      <rect width="280" height="60" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1.2"/>
+      <text x="140" y="25" text-anchor="middle" fill="#f1f5f9" font-size="12" font-weight="600">Health Probe Verification</text>
+      <text x="140" y="43" text-anchor="middle" fill="#34d399" font-size="10">GET /health → {"status": "ok"}</text>
+    </g>
+
+    <g transform="translate(20, 280)">
+      <rect width="280" height="85" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="140" y="24" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="700">LIVE PRODUCTION SERVICE</text>
+      <text x="140" y="44" text-anchor="middle" fill="#f8fafc" font-size="10" font-weight="600">churn-prediction-ml-model-bkdm</text>
+      <text x="140" y="60" text-anchor="middle" fill="#38bdf8" font-size="9.5">.onrender.com</text>
+      <text x="140" y="76" text-anchor="middle" fill="#94a3b8" font-size="9">Interactive docs: /docs | /metrics</text>
+    </g>
+  </g>
+
+  <!-- Connective Arrows -->
+  <!-- Git push to Actions -->
+  <path d="M 240 200 L 280 200" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#arr-orange)"/>
+  
+  <!-- Step sequence within CI -->
+  <path d="M 480 172 L 500 172" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <path d="M 590 200 L 590 220 L 390 220 L 390 245" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <path d="M 480 245 L 500 245" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Test to Decision -->
+  <path d="M 490 370 L 490 385" fill="none" stroke="#60a5fa" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Decision Success to Render -->
+  <path d="M 450 420 L 740 420" fill="none" stroke="#34d399" stroke-width="2.5" marker-end="url(#arr-green)"/>
+  <rect x="545" y="405" width="100" height="22" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="595" y="420" text-anchor="middle" fill="#a7f3d0" font-size="10" font-weight="700">YES: Auto-Deploy</text>
+</svg>

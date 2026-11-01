@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%" style="background: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="lane-client" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="card-drop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="m-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#60a5fa" />
+    </marker>
+    <marker id="m-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#22d3ee" />
+    </marker>
+    <marker id="m-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#a78bfa" />
+    </marker>
+    <marker id="m-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399" />
+    </marker>
+    <marker id="m-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="36" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700">Prediction API Request &amp; Execution Lifecycle</text>
+  <text x="500" y="58" text-anchor="middle" fill="#94a3b8" font-size="12.5">Chronological sequence through Uvicorn, FastAPI, Pydantic, the ML Pipeline, and Telemetry</text>
+
+  <!-- Lifeline Columns -->
+  <!-- Col 1: Client -->
+  <g transform="translate(80, 85)">
+    <rect x="-60" y="0" width="120" height="36" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="700">Client / Test</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Col 2: Uvicorn -->
+  <g transform="translate(250, 85)">
+    <rect x="-60" y="0" width="120" height="36" rx="6" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#a5f3fc" font-size="12" font-weight="700">Uvicorn (ASGI)</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Col 3: FastAPI Router -->
+  <g transform="translate(430, 85)">
+    <rect x="-65" y="0" width="130" height="36" rx="6" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#7dd3fc" font-size="12" font-weight="700">FastAPI Router</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Col 4: Pydantic v2 -->
+  <g transform="translate(610, 85)">
+    <rect x="-65" y="0" width="130" height="36" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#fbcfe8" font-size="12" font-weight="700">Pydantic v2 Schema</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Col 5: ML Pipeline -->
+  <g transform="translate(780, 85)">
+    <rect x="-65" y="0" width="130" height="36" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#ddd6fe" font-size="12" font-weight="700">ML Pipeline in RAM</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Col 6: Telemetry -->
+  <g transform="translate(930, 85)">
+    <rect x="-50" y="0" width="100" height="36" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+    <text x="0" y="22" text-anchor="middle" fill="#a7f3d0" font-size="12" font-weight="700">Telemetry</text>
+    <line x1="0" y1="36" x2="0" y2="500" stroke="#334155" stroke-dasharray="4,4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Sequence Step 1: POST /predict -->
+  <path d="M 80 150 L 250 150" stroke="#60a5fa" stroke-width="2" marker-end="url(#m-blue)"/>
+  <rect x="95" y="132" width="140" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="165" y="144" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">1. POST /predict (JSON)</text>
+
+  <!-- Sequence Step 2: Forward to FastAPI -->
+  <path d="M 250 175 L 430 175" stroke="#22d3ee" stroke-width="2" marker-end="url(#m-cyan)"/>
+  <rect x="270" y="157" width="140" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="340" y="169" text-anchor="middle" fill="#a5f3fc" font-size="10" font-weight="600">2. Request scope &amp; body</text>
+
+  <!-- Sequence Step 3: Timer Start -->
+  <path d="M 430 200 L 930 200" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#m-green)"/>
+  <rect x="615" y="182" width="160" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="695" y="194" text-anchor="middle" fill="#a7f3d0" font-size="9.5">3. start = time.perf_counter()</text>
+
+  <!-- Sequence Step 4: Validate -->
+  <path d="M 430 230 L 610 230" stroke="#ec4899" stroke-width="2" marker-end="url(#m-cyan)"/>
+  <rect x="455" y="212" width="130" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="520" y="224" text-anchor="middle" fill="#fbcfe8" font-size="10" font-weight="600">4. Validate against Customer</text>
+
+  <!-- Alt Block 1: Validation Error (422) -->
+  <g transform="translate(50, 255)">
+    <rect width="590" height="48" rx="6" fill="#450a0a" stroke="#f87171" stroke-width="1.2" fill-opacity="0.4"/>
+    <text x="15" y="18" fill="#fca5a5" font-size="10" font-weight="700">[ALT: Validation Failure - e.g. tenure &lt; 0]</text>
+    <path d="M 560 30 L 30 30" stroke="#f87171" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#m-red)"/>
+    <text x="295" y="26" text-anchor="middle" fill="#fca5a5" font-size="9.5" font-weight="600">Return HTTP 422 Unprocessable Entity (Field details JSON)</text>
+  </g>
+
+  <!-- Sequence Step 5: Convert to dict & Forward to Pipeline -->
+  <path d="M 610 325 L 780 325" stroke="#a78bfa" stroke-width="2" marker-end="url(#m-purple)"/>
+  <rect x="630" y="307" width="130" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="695" y="319" text-anchor="middle" fill="#ddd6fe" font-size="10" font-weight="600">5. predict_proba([dict])</text>
+
+  <!-- Step 6: Pipeline internal execution note -->
+  <g transform="translate(740, 345)">
+    <rect width="170" height="42" rx="6" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="85" y="16" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="700">DictVectorizer ➔ Dense</text>
+    <text x="85" y="32" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="700">LogisticRegression ➔ [[p0, p1]]</text>
+  </g>
+
+  <!-- Sequence Step 7: Return raw probability -->
+  <path d="M 780 405 L 430 405" stroke="#a78bfa" stroke-width="2" marker-end="url(#m-cyan)"/>
+  <rect x="540" y="387" width="130" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="605" y="399" text-anchor="middle" fill="#ddd6fe" font-size="10" font-weight="600">7. Return probability array</text>
+
+  <!-- Step 8: Thresholding logic note -->
+  <g transform="translate(350, 420)">
+    <rect width="160" height="24" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+    <text x="80" y="16" text-anchor="middle" fill="#38bdf8" font-size="9.5" font-weight="600">8. churn = probability &gt;= 0.5</text>
+  </g>
+
+  <!-- Sequence Step 9: Record Telemetry (finally block) -->
+  <path d="M 430 460 L 930 460" stroke="#10b981" stroke-width="2" marker-end="url(#m-green)"/>
+  <rect x="570" y="442" width="210" height="16" rx="3" fill="#0f172a" opacity="0.85"/>
+  <text x="675" y="454" text-anchor="middle" fill="#a7f3d0" font-size="9.5" font-weight="600">9. Record latency &amp; prediction_count++</text>
+
+  <!-- Sequence Step 10: HTTP 200 Response -->
+  <path d="M 430 490 L 80 490" stroke="#34d399" stroke-width="2.5" marker-end="url(#m-green)"/>
+  <rect x="165" y="472" width="210" height="18" rx="4" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <text x="270" y="485" text-anchor="middle" fill="#a7f3d0" font-size="10.5" font-weight="700">10. HTTP 200 OK {churn_probability, churn}</text>
+
+  <!-- Legend Bar -->
+  <g transform="translate(80, 550)">
+    <rect width="850" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <circle cx="25" cy="18" r="5" fill="#34d399"/>
+    <text x="38" y="22" fill="#cbd5e1" font-size="11">Success (200 OK)</text>
+
+    <circle cx="195" cy="18" r="5" fill="#f87171"/>
+    <text x="208" y="22" fill="#cbd5e1" font-size="11">Schema Rejection (422)</text>
+
+    <circle cx="395" cy="18" r="5" fill="#f59e0b"/>
+    <text x="408" y="22" fill="#cbd5e1" font-size="11">Internal Exception (500)</text>
+
+    <circle cx="595" cy="18" r="5" fill="#38bdf8"/>
+    <text x="608" y="22" fill="#cbd5e1" font-size="11">Method Not Allowed (405)</text>
+
+    <text x="800" y="22" fill="#94a3b8" font-size="10" font-style="italic">Lifespan: loaded once at boot</text>
+  </g>
+</svg>
